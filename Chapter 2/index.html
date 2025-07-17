@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern JS</title>
+    <!-- Prism CSS for syntax highlighting -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>JS Chapter-2</h2>
+        <h2>JavaScript Variables </h2>
+        <div class="types">
+            <span class="label let">Let</span>
+            <span class="label var">Var</span>
+            <span class="label const">Const</span>
+        </div>
+        <h3 id="title"></h3>
+    </div>
+
+    <!-- Stylish Rules Section -->
+    <div class="rules">
+        <h3>🔍 JavaScript Variable Rules</h3>
+        <ul>
+            <li>
+                <span class="label let">let</span>
+                Block-scoped, can be updated but not re-declared in the same scope.
+            </li>
+            <li>
+                <span class="label var">var</span>
+                Function-scoped, can be updated and re-declared. Hoisted but initialized as <code class="language-javascript" style="margin-top: 5px;">undefined</code>
+            </li>
+            <li>
+                <span class="label const">const</span>
+                Block-scoped, must be initialized when declared, and cannot be reassigned.
+            </li>
+            <li>✅ Variables cannot start with a number or use reserved keywords.</li>
+            <li>🔠 Variable names are case-sensitive: <code class="language-javascript" style="margin-top: 3px;">age</code> ≠ <code class="language-javascript">Age</code></li>
+            <li>⚠️ <strong>const</strong> does not make the value immutable—only the reference is fixed.</li>
+        </ul>
+    </div>
+
+    <!-- Prism code block -->
+    <pre><code class="language-javascript" id="codeBlock"></code></pre>
+
+    <script>
+        let age = 25;
+        let year = 2025;
+        console.log(age, year); // age=25 year=2025
+
+        age = 40;
+        console.log(age); // age= 40
+
+        const points = 100;
+        // points = 20; // ❌ Not possible
+        console.log(points); // points=100
+
+        var score = 75;
+        console.log(score); // score = 75
+
+        score = 20;
+        console.log(score); // score = 20
+
+        const codeContent = `
+    let age = 25;
+    let year = 2025;
+    console.log(age, year); // age=25 year=2025
+
+    age = 40;
+    console.log(age); // age= 40
+
+    const points = 100;
+    // points = 20; // ❌ Not possible
+    console.log(points); // points=100
+
+    var score = 75;
+    console.log(score); // score = 75
+
+    score = 20;
+    console.log(score); // score = 20
+    `;
+
+        document.getElementById("codeBlock").textContent = codeContent;
+    </script>
+
+    <!-- Prism JS -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+</body>
+
+</html>

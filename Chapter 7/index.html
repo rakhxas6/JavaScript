@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern JS [Novice to Ninja]</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>JavaScript Chapter - 5</h1>
+        <span>JavaScript Data Types - Objects</span>
+        <h3>Getting started with Arrays</h3>
+    </div>
+
+
+    <!-- Arrays Rules Section -->
+    <div class="rules">
+        <h3>➕ String + Number Behavior</h3>
+        <ul>
+            <li><code class="language-javascript">"5" + 5</code> → <code class="language-javascript">"55"</code> –
+                Concatenation</li>
+            <li><code class="language-javascript">5 + "5"</code> → <code class="language-javascript">"55"</code> – String
+                wins</li>
+            <li><code class="language-javascript">"5" - 2</code> → <code class="language-javascript">3</code> – String
+                converted to number</li>
+            <li><code class="language-javascript">"hello" - 5</code> → <code class="language-javascript">NaN</code> –
+                Invalid subtraction</li>
+            <li><code class="language-javascript">"5" + 5 - 5 + "5"</code> → <code class="language-javascript">"505"</code>
+                – Mixed behavior</li>
+        </ul>
+    
+        <h3>⏫ Increment (++), Decrement (--) Behavior</h3>
+        <ul>
+            <li><code class="language-javascript">x++</code> → Returns original value, then increments</li>
+            <li><code class="language-javascript">++x</code> → Increments first, then returns new value</li>
+            <li><code class="language-javascript">x--</code> → Returns original value, then decrements</li>
+            <li><code class="language-javascript">--x</code> → Decrements first, then returns new value</li>
+            <li><strong>Example:</strong><br>
+                <code class="language-javascript ">
+        let a = 5;<br>
+        console.log(a++); // 5 (then becomes 6)<br >
+        console.log(++a); // 7 (was 6, then 
+        incremented before return)
+              </code>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- JavaScript Data Types Table for Object[arrays] -->
+    <div class="data-types">
+        <h3>📘 JavaScript Data Types Object [Array]</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th>Type Check</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>String</code></td>
+                    <td>Represents textual data.</td>
+                    <td><code class="language-javascript">"Hello, world"</code></td>
+                    <td><code class="language-javascript">typeof "Hello"</code> → string</td>
+                </tr>
+                <tr>
+                    <td><code>Number</code></td>
+                    <td>Represents integers and floats.</td>
+                    <td><code class="language-javascript">42, 3.14</code></td>
+                    <td><code class="language-javascript">typeof 42</code> → number</td>
+                </tr>
+                <tr>
+                    <td><code>Boolean</code></td>
+                    <td>Logical entity with true or false.</td>
+                    <td><code class="language-javascript">true, false</code></td>
+                    <td><code class="language-javascript">typeof true</code> → boolean</td>
+                </tr>
+                <tr>
+                    <td><code>Null</code></td>
+                    <td>Intentional absence of any object value.</td>
+                    <td><code class="language-javascript">null</code></td>
+                    <td><code class="language-javascript">typeof null</code> → object ⚠️</td>
+                </tr>
+                <tr>
+                    <td><code>Undefined</code></td>
+                    <td>Declared but not assigned a value.</td>
+                    <td><code class="language-javascript">let x;</code></td>
+                    <td><code class="language-javascript">typeof x</code> → undefined</td>
+                </tr>
+                <tr>
+                    <td><code>Object</code></td>
+                    <td>Key-value pairs of properties and methods.</td>
+                    <td><code class="language-javascript">{ name: "John", age: 30 }</code></td>
+                    <td><code class="language-javascript">typeof {}</code> → object</td>
+                </tr>
+                <tr>
+                    <td><code>Array</code></td>
+                    <td>List-like objects.</td>
+                    <td><code class="language-javascript">[1, 2, 3]</code></td>
+                    <td><code class="language-javascript">Array.isArray([])</code> → true</td>
+                </tr>
+                <tr>
+                    <td><code>Symbol</code></td>
+                    <td>Unique and immutable value.</td>
+                    <td><code class="language-javascript">Symbol("id")</code></td>
+                    <td><code class="language-javascript">typeof Symbol()</code> → symbol</td>
+                </tr>
+                <tr>
+                    <td><code>BigInt</code></td>
+                    <td>Large integers beyond <code class="language-javascript">2<sup>53</sup>-1</code>.</td>
+                    <td><code class="language-javascript">12345678901234567890n</code></td>
+                    <td><code class="language-javascript">typeof 10n</code> → bigint</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Prism Code Block -->
+    <pre><code class="language-javascript" id="codeBlock"></code></pre>
+
+    <script>
+        const codeContent = `;
+
+`;
+
+        document.getElementById("codeBlock").textContent = codeContent.trim();
+    </script>
+
+    <!-- Prism JS -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+</body>
+
+</html>

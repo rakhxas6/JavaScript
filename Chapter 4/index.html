@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern JS [Novice to Ninja]</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>JavaScript Chapter - 4</h1>
+        <span>JavaScript Data Types</span>
+        <h3>Getting Started with Strings</h3>
+    </div>
+
+    <div class="data-types">
+        <h3 style="margin-bottom: 25px;">📘 JavaScript String Methods</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>toUpperCase()</code></td>
+                    <td>Converts all letters to uppercase</td>
+                    <td><code class="language-javascript">"hello".toUpperCase()</code></td>
+                    <td>HELLO</td>
+                </tr>
+                <tr>
+                    <td><code>toLowerCase()</code></td>
+                    <td>Converts all letters to lowercase</td>
+                    <td><code class="language-javascript">"HeLLo".toLowerCase()</code></td>
+                    <td >hello</td>
+                </tr>
+                <tr>
+                    <td><code>indexOf()</code></td>
+                    <td>Finds the first index of a substring</td>
+                    <td><code class="language-javascript">"email@example.com".indexOf("@")</code></td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td><code>lastIndexOf()</code></td>
+                    <td>Finds the last index of a substring</td>
+                    <td><code class="language-javascript">"banana".lastIndexOf("a")</code></td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td><code>slice(start, end)</code></td>
+                    <td>Extracts part of a string</td>
+                    <td><code class="language-javascript">"JavaScript".slice(0,4)</code></td>
+                    <td>Java</td>
+                </tr>
+                <tr>
+                    <td><code>substring(start, end)</code></td>
+                    <td>Similar to slice but can't use negatives</td>
+                    <td><code class="language-javascript">"JavaScript".substring(4,10)</code></td>
+                    <td>Script</td>
+                </tr>
+                <tr>
+                    <td><code>replace(a, b)</code></td>
+                    <td>Replaces first match of a string</td>
+                    <td><code class="language-javascript">"hello".replace("l", "x")</code></td>
+                    <td>hexlo</td>
+                </tr>
+                <tr>
+                    <td><code>trim()</code></td>
+                    <td>Removes whitespace from both ends</td>
+                    <td><code class="language-javascript">"  hello  ".trim()</code></td>
+                    <td>hello</td>
+                </tr>
+                <tr>
+                    <td><code>includes()</code></td>
+                    <td>Checks if string contains a value</td>
+                    <td><code class="language-javascript">"test".includes("e")</code></td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td><code>startsWith()</code></td>
+                    <td>Checks if string starts with value</td>
+                    <td><code class="language-javascript">"JS".startsWith("J")</code></td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td><code>endsWith()</code></td>
+                    <td>Checks if string ends with value</td>
+                    <td><code class="language-javascript">"code".endsWith("e")</code></td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td><code>charAt()</code></td>
+                    <td>Returns character at given index</td>
+                    <td><code class="language-javascript">"hello".charAt(1)</code></td>
+                    <td>e</td>
+                </tr>
+                <tr>
+                    <td><code>charCodeAt()</code></td>
+                    <td>Returns UTF-16 code of char at index</td>
+                    <td><code class="language-javascript">"A".charCodeAt(0)</code></td>
+                    <td>65</td>
+                </tr>
+                <tr>
+                    <td><code>split()</code></td>
+                    <td>Splits string into array</td>
+                    <td><code class="language-javascript">"a,b,c".split(",")</code></td>
+                    <td>[a, b, c]</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Prism code block -->
+    <pre><code class="language-javascript" id="codeBlock"></code></pre>
+
+    <script>
+        const codeContent = `
+// Strings
+console.log("Hello, world!");
+
+// Email example
+let email = "sudhankandel18@gmail.com";
+console.log(email);
+
+// String concatenation
+let firstName = "Sudhan";
+let lastName = "Kandel";
+let fullName = firstName + " " + lastName;
+console.log(fullName);
+
+// Getting characters
+console.log(fullName[0]);
+
+// String length
+console.log(fullName.length);
+
+// Methods (non-mutating)
+console.log(fullName.toUpperCase()); // SUDHAN KANDEL
+let lower = fullName.toLowerCase();
+console.log(lower);
+
+// indexOf, lastIndexOf
+console.log(email.indexOf("@"));       // 13
+console.log(email.lastIndexOf("a"));   // 15
+
+// slice, substring
+console.log(email.slice(3, 10));       // hankand
+console.log(email.substring(4, 10));   // ankand
+
+// replace
+console.log(email.replace("n", "x"));  // sudhaxkandel18@gmail.com
+
+// trim
+let messy = "   code    ";
+console.log(messy.trim()); // "code"
+
+// includes, startsWith, endsWith
+console.log(email.includes("@"));      // true
+console.log(email.startsWith("s"));    // true
+console.log(email.endsWith(".com"));   // true
+
+// charAt and charCodeAt
+console.log(fullName.charAt(2));       // d
+console.log("A".charCodeAt(0));        // 65
+
+// split
+let tags = "js,html,css";
+console.log(tags.split(","));          // ["js", "html", "css"]
+    `;
+        document.getElementById("codeBlock").textContent = codeContent;
+    </script>
+
+    <!-- Prism JS -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+</body>
+
+</html>

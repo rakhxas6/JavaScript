@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern JS [Novice to Ninja]</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>JavaScript Chapter - 5</h1>
+        <span>JavaScript Data Types</span>
+        <h3>Getting started with numbers</h3>
+    </div>
+
+   
+    <!-- Variable Rules Section -->
+    <div class="rules">
+        <h3>➕ String + Number Behavior</h3>
+        <ul>
+            <li><code class="language-javascript">"5" + 5</code> → <code class="language-javascript">"55"</code> –
+                Concatenation</li>
+            <li><code class="language-javascript">5 + "5"</code> → <code class="language-javascript">"55"</code> – String
+                wins</li>
+            <li><code class="language-javascript">"5" - 2</code> → <code class="language-javascript">3</code> – String
+                converted to number</li>
+            <li><code class="language-javascript">"hello" - 5</code> → <code class="language-javascript">NaN</code> –
+                Invalid subtraction</li>
+            <li><code class="language-javascript">"5" + 5 - 5 + "5"</code> → <code class="language-javascript">"505"</code>
+                – Mixed behavior</li>
+        </ul>
+    
+        <h3>⏫ Increment (++), Decrement (--) Behavior</h3>
+        <ul>
+            <li><code class="language-javascript">x++</code> → Returns original value, then increments</li>
+            <li><code class="language-javascript">++x</code> → Increments first, then returns new value</li>
+            <li><code class="language-javascript">x--</code> → Returns original value, then decrements</li>
+            <li><code class="language-javascript">--x</code> → Decrements first, then returns new value</li>
+            <li><strong>Example:</strong><br>
+                <code class="language-javascript ">
+    let a = 5;<br>
+    console.log(a++); // 5 (then becomes 6)<br >
+    console.log(++a); // 7 (was 6, then 
+    incremented before return)
+          </code>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- Prism Code Block -->
+    <pre><code class="language-javascript" id="codeBlock"></code></pre>
+
+    <script>
+        const codeContent = `let radius = 10;
+const pi = 3.14;
+
+// Math Operators: +, -, *, /, %, **
+
+let result = pi * radius ** 2; // Area of circle
+console.log(result);
+
+// Order of operation - B I D M A S
+let calc = 5 * (10 - 3) ** 2;
+console.log(calc);
+
+// Increment and Decrement
+let likes = 10;
+likes += 5;
+likes *= 2;
+console.log(likes);
+
+// NaN - Not a Number
+console.log(5 * 'hello'); // NaN
+
+// Concatenation vs Subtraction
+let message = 'The blog has ' + likes + ' likes';
+console.log(message);
+
+// Mixing string + number - subtraction
+console.log('5' + 5 - 5 + '5'); // "505"
+
+
+// Increment and Decrement Examples
+let x = 5;
+
+console.log("x++ =", x++);  // prints 5, then x becomes 6
+console.log("++x =", ++x);  // x becomes 7, then prints 7
+
+let y = 10;
+
+console.log("y-- =", y--);  // prints 10, then y becomes 9
+console.log("--y =", --y);  // y becomes 8, then prints 8
+`;
+            document.getElementById("codeBlock").textContent = codeContent.trim();
+
+    </script>
+
+    <!-- Prism JS -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+</body>
+
+</html>

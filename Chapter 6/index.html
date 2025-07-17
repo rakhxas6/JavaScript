@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern JS [Novice to Ninja]</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>JavaScript Chapter - 6</h1>
+        <!-- <span>JavaScript Data Types</span> -->
+        <h2>Template strings</h2>
+    </div>
+    <div class="template-info">
+        <p>
+            Template strings are a syntax for creating strings in a cleaner and more dynamic way using backticks
+            <code class="language-javascript">`Hello ${name}`</code>. They allow:
+        </p>
+        <ul>
+            <li>✅ Expression interpolation using <code class="language-javascript">${...}</code></li>
+            <li>✅ Multi-line string support without concatenation</li>
+            <li>✅ Easier creation of dynamic HTML templates</li>
+        </ul>
+    </div>
+
+
+    <!-- Prism Code Block -->
+    <pre><code class="language-javascript" id="codeBlock"></code></pre>
+
+    <script>
+        const codeContent = `const title = "Best Books of All Time";
+const author = "Ved Vyasa";
+const likes = 24000000;
+
+// Concatenation method
+console.log(
+  "The " + title + " was written by " + author + 
+  " and has garnered over " + likes + " 
+  likes from Hindus around the world."
+);
+
+// Template string method
+console.log(
+  \`The \${title} was written by \${author} and 
+  has garnered over \${likes} likes from
+   people around the world.\`
+);
+
+// Creating an HTML template string
+let html = \`
+  <h2>\${title}</h2>
+  <p>\${author}</p>
+  <span>This epic has \${likes} likes</span>
+\`;
+
+console.log(html);`;
+
+        document.getElementById("codeBlock").textContent = codeContent.trim();
+    </script>
+
+    <!-- Prism JS -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+</body>
+
+</html>
