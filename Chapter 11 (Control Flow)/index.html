@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern JS [Novice to Ninja]</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>JavaScript Chapter - 11</h1>
+        <span>Control Flow</span>
+        <h3>Getting started with Loops- ["For Loops", "While Loops]"</h3>
+    </div>
+
+
+
+<!-- Just after the h3 line -->
+<div class="rules">
+    <h3>📘 Important Rules about Loops in JavaScript</h3>
+    <ul>
+        <li><strong>Loops are control flow tools:</strong> They repeat a block of code as long as the condition is true.
+        </li>
+        <li><strong>Use <code class="language-javascript">for</code>, <code class="language-javascript">while</code>, <code class="language-javascript">do...while</code> when index control is needed.</li>
+        <li><strong><code class="language-javascript">for...of</code> is for iterables like arrays or strings:</strong> Gives values directly.</li>
+        <li><strong><code class="language-javascript">for...in</code> is for objects:</strong> Loops over keys.</li>
+        <li><strong><code class="language-javascript">break</code> stops the loop:</strong> Immediately exits.</li>
+        <li><strong><code class="language-javascript">continue</code> skips the current iteration:</strong> Goes to the next cycle.</li>
+        <li><strong><code class="language-javascript">length</code> property:</strong> Used to define loop range in arrays.</li>
+        <li><strong>Loop methods like <code class="language-javascript">forEach</code>, <code class="language-javascript">map</code>, <code class="language-javascript">filter</code>:</strong> Useful for
+            functional patterns.</li>
+    </ul>
+</div>
+
+
+
+
+    <!-- JavaScript Data Types Table for Object[arrays] -->
+    <div class="data-types">
+        <h3>📚 JavaScript Array Methods & Examples</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+        <tr>
+            <td><code>for</code></td>
+            <td>Traditional loop with index control</td>
+            <td>
+                <code>
+              for (let i = 0; i &lt; 3; i++) {<br>
+                console.log(i);<br>
+              }
+            </code>
+            </td>
+            <td><code>0, 1, 2</code></td>
+        </tr>
+        <tr>
+            <td><code>forEach()</code></td>
+            <td>Array method to run a function on each item</td>
+            <td>
+                <code>
+              [1, 2].forEach(x => console.log(x));
+            </code>
+            </td>
+            <td><code>1<br>2</code></td>
+        </tr>
+        <tr>
+            <td><code>for...of</code></td>
+            <td>Loops over iterable items like arrays or strings</td>
+            <td>
+                <code>
+              for (let char of "hi") {<br>
+                console.log(char);<br>
+              }
+            </code>
+            </td>
+            <td><code>h<br>i</code></td>
+        </tr>
+        <tr>
+            <td><code>for...in</code></td>
+            <td>Loops over object keys</td>
+            <td>
+                <code>
+              const obj = {a: 1, b: 2};<br>
+              for (let key in obj) {<br>
+                console.log(key);<br>
+              }
+            </code>
+            </td>
+            <td><code>a<br>b</code></td>
+        </tr>
+        <tr>
+            <td><code>while</code></td>
+            <td>Repeats block while condition is true</td>
+            <td>
+                <code>
+              let i = 0;<br>
+              while (i &lt; 2) {<br>
+                console.log(i);<br>
+                i++;<br>
+              }
+            </code>
+            </td>
+            <td><code>0<br>1</code></td>
+        </tr>
+        <tr>
+            <td><code>do...while</code></td>
+            <td>Runs code block at least once before checking condition</td>
+            <td>
+                <code>
+              let i = 0;<br>
+              do {<br>
+                console.log(i);<br>
+                i++;<br>
+              } while (i &lt; 2);
+            </code>
+            </td>
+            <td><code>0<br>1</code></td>
+        </tr>
+        <tr>
+            <td><code>break</code></td>
+            <td>Exits the loop immediately</td>
+            <td>
+                <code>
+              for (let i = 0; i &lt; 5; i++) {<br>
+                if (i === 3) break;<br>
+                console.log(i);<br>
+              }
+            </code>
+            </td>
+            <td><code>0, 1, 2</code></td>
+        </tr>
+        <tr>
+            <td><code>continue</code></td>
+            <td>Skips current iteration</td>
+            <td>
+                <code>
+              for (let i = 0; i &lt; 5; i++) {<br>
+                if (i === 2) continue;<br>
+                console.log(i);<br>
+              }
+            </code>
+            </td>
+            <td><code>0, 1, 3, 4</code></td>
+        </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <!-- Prism Code Block -->
+    <pre><code class="language-javascript" id="codeBlock"></code></pre>
+
+
+<!-- <script src="script.js"> -->
+    <script>
+  const codeContent = `
+// ---------- FOR Loop ----------
+const names = ["shaun", "mario", "suman"];
+
+for (let i = 0; i < names.length; i++) {
+  let html = \`<div>\${names[i]} - for loop</div>\`;
+  console.log(html);
+}
+
+// ---------- forEach Loop ----------
+names.forEach(function (name, index) {
+  let html = \`<div>\${name} - forEach loop at index \${index}</div>\`;
+  console.log(html);
+});
+
+// ---------- for...of Loop ----------
+for (const name of names) {
+  let html = \`<div>\${name} - for...of loop</div>\`;
+  console.log(html);
+}
+
+// ---------- for...in Loop (for objects) ----------
+const person = { fname: "John", lname: "Doe", age: 25 };
+
+for (let key in person) {
+  console.log(\`\${key}: \${person[key]}\`);
+}
+
+// ---------- while Loop ----------
+let x = 0;
+let whileText = "";
+
+while (x < 5) {
+  whileText += \`Number is \${x} \`;
+  x++;
+}
+console.log("While loop output:", whileText);
+
+// ---------- do...while Loop ----------
+let y = 0;
+let doWhileText = "";
+
+do {
+  doWhileText += \`Number is \${y} \`;
+  y++;
+} while (y < 5);
+
+console.log("Do While loop output:", doWhileText);
+`;
+
+    document.getElementById("codeBlock").textContent = codeContent.trim();
+
+    </script>
+
+    <!-- Prism JS -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+</body>
+
+</html>

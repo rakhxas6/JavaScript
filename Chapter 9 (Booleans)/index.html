@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern JS [Novice to Ninja]</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>JavaScript Chapter - 9</h1>
+        <span>JavaScript Data Types - Booleans</span>
+        <h3>Knowing Boolean & Comparison Operators also Loose && Strict Comparison</h3>
+    </div>
+
+
+
+    <!-- Array Rules Section -->
+    <div class="rules">
+        <h3>📘 Important Notes on Booleans & Comparison Operators</h3>
+        <ul>
+            <li><strong>Boolean Values:</strong> Only two → <code class="language-javascript">true</code> and <code
+                    class="language-javascript">false</code></li>
+            <li><strong>Truthy & Falsy:</strong> Values like
+                <span style="display: flex; gap: 20px;">
+                    <code class="language-javascript">0</code> <code class="language-javascript">""</code><code
+                        class="language-javascript">null</code>
+                    <code class="language-javascript">undefined</code> <code class="language-javascript">NaN</code>
+                    <code class="language-javascript">false</code>
+                </span>
+                are <strong>falsy</strong>. Everything else
+                is <strong>truthy</strong>.
+            </li>
+            <li><strong>String Methods:</strong> Methods like <code class="language-javascript">.includes()</code>
+                return Boolean values.</li>
+            <li><strong>Comparison Operators:</strong> Use
+                <span style="display: flex; gap: 25px;">
+                    <code class="language-javascript">==</code> <code class="language-javascript">!=</code> <code
+                        class="language-javascript">===</code>
+                    <code class="language-javascript">!==</code><code class="language-javascript">&gt;</code> <code
+                        class="language-javascript">&lt;</code> <code class="language-javascript">&gt;=</code> <code
+                        class="language-javascript">&lt;=</code>
+                </span>
+            </li>
+            <li><strong>Loose Comparison <code class="language-javascript">(==)</code>:</strong> Converts data types
+                before comparing. Can lead to
+                unexpected results.</li>
+            <li><strong>Strict Comparison <code class="language-javascript">(===)</code>:</strong> Compares both value
+                and type. Safer and recommended.
+            </li>
+            <li><strong>Case-sensitive:</strong> Comparisons between strings are case-sensitive
+                <code class="language-javascript">"hello" !== "Hello"</code>
+            </li>
+            <li><strong>Lexicographic String Comparison:</strong> Strings are compared character-by-character by Unicode
+                value.</li>
+        </ul>
+    </div>
+
+
+
+    <!-- JavaScript Data Types Table for Object[arrays] -->
+    <div class="data-types">
+        <h3>🧪 Loose vs Strict Comparison</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Expression</th>
+                    <th>Type</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>25 == "25"</code></td>
+                    <td>Loose</td>
+                    <td><code>true</code> ✅</td>
+                </tr>
+                <tr>
+                    <td><code>25 === "25"</code></td>
+                    <td>Strict</td>
+                    <td><code>false</code> ❌</td>
+                </tr>
+                <tr>
+                    <td><code>null == undefined</code></td>
+                    <td>Loose</td>
+                    <td><code>true</code> ✅</td>
+                </tr>
+                <tr>
+                    <td><code>null === undefined</code></td>
+                    <td>Strict</td>
+                    <td><code>false</code> ❌</td>
+                </tr>
+                <tr>
+                    <td><code>0 == false</code></td>
+                    <td>Loose</td>
+                    <td><code>true</code> ✅</td>
+                </tr>
+                <tr>
+                    <td><code>0 === false</code></td>
+                    <td>Strict</td>
+                    <td><code>false</code> ❌</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <!-- Prism Code Block -->
+    <pre><code class="language-javascript" id="codeBlock"></code></pre>
+
+    <script>
+        const codeContent = `
+// ✅ Boolean Values in JavaScript
+console.log(true, false);                // true false
+console.log(typeof true);                // boolean
+
+// ✅ Non-boolean values in strings
+console.log("true", "false");            // These are just strings
+
+// ✅ Methods that return booleans
+let email = "sudhankandel@gmail.com";
+let names = ["sajan", "sujan", "anna"];
+
+console.log(email.includes("@"));        // true
+console.log(email.includes("!"));        // false
+console.log(names.includes("anna"));     // true
+
+// ✅ Boolean logic in comparisons
+let age = 25;
+
+console.log(age == 25);                  // true (loose)
+console.log(age === "25");               // false (strict)
+console.log(age != 25);                  // false
+console.log(age > 20);                   // true
+console.log(age < 20);                   // false
+console.log(age >= 25);                  // true
+console.log(age <= 25);                  // true
+
+// ✅ Comparing strings (case-sensitive, Unicode-based)
+let person = "sudhan";
+
+console.log(person == "sudhan");         // true
+console.log(person == "Sudhan");         // false (case matters)
+console.log(person > "crystal");         // true
+console.log(person > "Sudhan");          // true
+console.log(person > "Crystal");         // true
+
+// ✅ Loose vs Strict Comparison
+
+// Loose comparison (==): Allows type coercion
+console.log(25 == "25");                 // true
+console.log(0 == false);                 // true
+console.log(null == undefined);          // true
+
+// Strict comparison (===): Compares value & type
+console.log(25 === "25");                // false
+console.log(0 === false);                // false
+console.log(null === undefined);         // false
+
+// Best Practice: Use strict comparison to avoid bugs
+`;
+
+
+        document.getElementById("codeBlock").textContent = codeContent.trim();
+    </script>
+
+    <!-- Prism JS -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+</body>
+
+</html>

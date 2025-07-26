@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern JS [Novice to Ninja]</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>JavaScript Chapter - 10</h1>
+        <span>Type Conversion</span>
+        <!-- <h3>Getting started with Arrays</h3> -->
+    </div>
+
+    <!-- Type Conversion Rules Section -->
+    <div class="rules">
+        <h3>📘 Important Rules about Type Conversion in JavaScript</h3>
+        <ul>
+            <li><strong>Implicit Conversion:</strong> JavaScript converts types automatically in some cases, like
+                <code class="language-javascript">"5" + 1</code> resulting in <code
+                    class="language-javascript">"51"</code> (string concatenation)
+            </li>
+            <li><strong>Explicit Conversion:</strong> You can convert using functions like <code
+                    class="language-javascript">Number()</code>,
+                <code class="language-javascript">String()</code>and <code class="language-javascript">Boolean()</code>
+            </li>
+            <li><strong>Number()</strong>:
+                <ul>
+                    <li>✅ Converts numeric strings to numbers: <code
+                            class="language-javascript">Number("100") → 100</code></li>
+                    <li>❌ Converts non-numeric strings to <code class="language-javascript">NaN</code>: <code
+                            class="language-javascript">Number("hello") → NaN</code></li>
+                </ul>
+            </li>
+            <li><strong>String():</strong> Converts numbers, booleans, etc. into strings: <code
+                    class="language-javascript">String(123) → "123"</code>
+            </li>
+            <li><strong>Boolean():</strong>
+                <ul>
+                    <li>✅ Truthy values: non-empty strings, non-zero numbers → <code
+                            class="language-javascript">true</code></li>
+                    <li>❌ Falsy values: <code class="language-javascript">0</code>, <code
+                            class="language-javascript">""</code>, <code class="language-javascript">null</code>, <code
+                            class="language-javascript">undefined</code>,
+                        <code class="language-javascript">NaN</code> → <code class="language-javascript">false</code>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>NaN:</strong> Stands for "Not a Number" and results from invalid numeric conversions.</li>
+            <li><strong>typeof:</strong> Use this to check the type of a variable e.g., <code
+                    class="language-javascript">typeof score</code></li>
+            <li><strong>Use conversion carefully:</strong> Misunderstanding it can lead to logic errors like
+                <code class="language-javascript">'100' + 1 → '1001'</code>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Prism Code Block -->
+    <pre><code class="language-javascript" id="codeBlock"></code></pre>
+
+    <!-- <script src="script.js"> -->
+    <script>
+        const codeContent = `// type conversion
+
+let score = '100';
+console.log(typeof score) //[string]
+
+console.log(score + 1) //[1001] performs concatenation
+
+
+score = Number(score)
+console.log(score + 1)     //[101] performs addition
+console.log(typeof score) //[number]
+
+
+let result = 'hello'
+result = Number(result)
+console.log(result)  //[NaN]
+
+
+let test = String(50)
+console.log(test)  //50
+console.log(typeof test) //string
+
+
+let boolean = Boolean(100)
+console.log(boolean, typeof boolean) //[true boolean]
+
+
+let test1 = Boolean(0)
+console.log(test1, typeof test1) //false boolean
+
+
+let num = Boolean('0')
+console.log(num, typeof num) //true boolean
+
+
+let num2 = Boolean('')
+console.log(num2, typeof num2) //false boolean
+//+ numbers and - numbers are truthy values  in type converison
+// 0 are falsy values
+`;
+
+        document.getElementById("codeBlock").textContent = codeContent.trim();
+    </script>
+
+    <!-- Prism JS -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+</body>
+
+</html>

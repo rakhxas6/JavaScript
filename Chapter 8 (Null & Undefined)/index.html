@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern JS [Novice to Ninja]</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>JavaScript Chapter - 8</h1>
+        <span>JavaScript Data Types - Null and Undefined</span>
+        <h3>Knowing the Differences</h3>
+    </div>
+
+
+
+
+
+    <!-- JavaScript Data Types Table for Object[arrays] -->
+    <div class="data-types">
+        <h3>🆚 Difference between null and >undefined</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>undefined</th>
+                    <th>null</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Type</td>
+                    <td><code class="language-javascript">'undefined'</code></td>
+                    <td><code class="language-javascript">'object'</code></td>
+                </tr>
+                <tr>
+                    <td>Meaning</td>
+                    <td>Variable declared but not assigned</td>
+                    <td>Intentional absence of value</td>
+                </tr>
+                <tr>
+                    <td>Set by</td>
+                    <td>JavaScript (by default)</td>
+                    <td>Developer (manually)</td>
+                </tr>
+                <tr>
+                    <td>Usage</td>
+                    <td>Check if variable is untouched</td>
+                    <td>Reset or clear a value</td>
+                </tr>
+                <tr>
+                    <td>Math operations</td>
+                    <td><code class="language-javascript">undefined + 1 → NaN</code> </td>
+                    <td><code class="language-javascript">null + 1 → 1</code> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <!-- Prism Code Block -->
+    <pre><code class="language-javascript" id="codeBlock"></code></pre>
+
+    <script >
+    const codeContent = `
+// 📌 Null vs Undefined in JavaScript
+
+// undefined → variable is declared but not assigned a value
+let score;
+console.log(score);              // undefined
+console.log(typeof score);       // 'undefined'
+console.log(score + 3);          // NaN (Not a Number)
+
+// null → intentional absence of value (manually assigned)
+let age = null;
+console.log(age);                // null
+console.log(typeof age);         // 'object' (this is a known JavaScript quirk)
+console.log(age + 3);            // 3 → null is coerced to 0 in arithmetic
+console.log(\`The age is \${age} years old\`);  // The age is null years old
+
+// Checking if a variable is truly undefined
+if (typeof notDeclared === 'undefined') {
+    console.log("notDeclared is truly undefined"); // avoids ReferenceError
+}
+
+// Best Practices:
+// ✅ Use null when you want to reset a value
+// ✅ Avoid using undefined manually – let JS handle it
+`;
+
+
+        document.getElementById("codeBlock").textContent = codeContent.trim();
+    </script>
+
+    <!-- Prism JS -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+</body>
+
+</html>
