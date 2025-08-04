@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern JS [Novice to Ninja]</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>JavaScript Chapter - 17</h1>
+        <span>Primitive Types & Reference Types</span>
+        <!-- <h3>Getting started with Arrays</h3> -->
+    </div>
+
+
+
+    <!-- Primitive vs Reference Types Section -->
+    <div class="rules">
+        <h3>📘 Primitive Types vs Reference Types in JavaScript</h3>
+        <ul>
+            <li><strong>Primitive Types:</strong> Stored in the "STACK". They are
+                copied by value.
+            </li>
+            <li >
+                The Types include:
+                String, Number, Boolean, undefined, null, Symbol, BigInt
+            </li>
+            <li><strong>Reference Types:</strong> Stored in the "HEAP". They are copied by reference.
+            </li>
+            <li>
+                The Types include: Object, Array, Function, Date, RegExp, Custom objects
+            </li>
+            <li><strong>Stack:</strong> Fast, small memory where primitive data is stored.</li>
+            <li><strong>Heap:</strong> Larger memory area where objects and functions are stored.</li>
+            <li><strong>Immutable:</strong> Primitive values cannot be changed (e.g., strings are immutable).</li>
+            <li><strong>Mutable:</strong> Reference values (like arrays and objects) can be changed.</li>
+        </ul>
+    </div>
+
+
+
+
+
+
+    <!-- Prism Code Block -->
+    <pre><code class="language-javascript" id="codeBlock"></code></pre>
+
+    <!-- <script src="script.js"> -->
+    <script>
+        const codeContent = `
+    // primitive values
+    let scoreOne = 50;
+    let scoreTwo = scoreOne;
+    console.log(\`scoreOne: \${scoreOne}\`, 
+    \`scoreTwo: \${scoreTwo}\`); // [50, 50]
+    scoreOne = 60;
+    console.log(\`scoreOne: \${scoreOne}\`,
+     \`scoreTwo: \${scoreTwo}\`); // [60, 50]
+
+    // reference values
+    let userOne = { name: "ryu", age: 30 };
+    let userTwo = userOne;
+    console.log(userOne, userTwo);
+
+    userOne.age = 25;
+    userTwo.name = "sajan";
+    console.log(userOne, userTwo);
+    `;
+
+        document.getElementById("codeBlock").textContent = codeContent.trim();
+    </script>
+
+
+    <!-- Prism JS -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+</body>
+
+</html>

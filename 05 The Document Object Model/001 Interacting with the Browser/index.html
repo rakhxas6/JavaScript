@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern JS [Novice to Ninja]</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>JavaScript Chapter - 18</h1>
+        <span>JavaScript & DOM Manipulation</span>
+        <h1 id="page-title">The Document Object Model</h1>
+    </div>
+
+
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; ">
+        <p>Hello, World!</p>
+        <p>Lorem, ipsum.
+        </p>
+        <p class="error">Error: Something went wrong!</p>
+    </div>
+
+
+    <div class="error">
+        This is another error message.
+    </div>
+
+    <div class="content">
+        <p>This is a paragraph inside the content div.</p>
+
+    </div>
+
+    <!-- Prism Code Block -->
+    <!-- <pre><code class="language-javascript" id="codeBlock"></code></pre> -->
+
+    <!-- <script> -->
+    <script src="script.js">
+
+        const codeContent = `
+`;
+
+        document.getElementById("codeBlock").textContent = codeContent.trim();
+    </script>
+
+    <!-- Prism JS -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+</body>
+
+</html>

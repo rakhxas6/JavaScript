@@ -1,0 +1,26 @@
+li {
+    list-style-type: none;
+    max-width: 200px;
+    padding: 8px;
+    margin: 8px auto;
+    background: #eee;
+    bottom: 1px dotted #ddd;
+}
+
+h1 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    max-width: 200px;
+    padding: 8px;
+    margin: 8px auto;
+    background: #eee;
+    bottom: 1px dotted #ddd;
+}
