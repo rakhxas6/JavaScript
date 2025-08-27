@@ -1,38 +1,28 @@
-//  array is a special type of object used to store ordered collections of values. These values can be of any type: strings, numbers, objects, other arrays, etc.
+//? Synchronous JS
 
-// const fruits = ["apple", "banana", "cherry"];
-// const numbers = [1, 2, 3, 4, 5];
-// const mixed = [1, "hello", true, null];
-// const nested = [
-//   [1, 2],
-//   [3, 4],
-// ];
+//? --JS can run ONE statement at a <time time datetime.
+// console.log("line one"); //it runs first then so on
+// console.log("line two");
+// console.log("line three");
 
-
-let ninjas = ['Sujan', "Sajan", "nandi"];
-// ninjas[1] = "ken"     // we can override the orignial data tooo.
-
-// console.log(ninjas[1])
-
-// let ages = [20, 23, 34, 45]
-// console.log(ages[2])
+//? single threaded means same
+// console.table([
+//   { step: "statement 1", status: "done" },
+//   { step: "statement 2", status: "done" },
+//   { step: "statement 3 --loading db--", status: "pending" },
+//   { step: "statement 4", status: "not started" },
+// ]);
 
 
-let random = ['shaun', 'crystal', 30, 20, null, undefined]
-// console.log(random)
+//? ASynchronous (Async) JS
 
-console.log(random.length)
+//? - Governs how we perform tasks which take some time to complete (e.g. Getting data from a database)
 
-
-// Array Methods
-
-// let result = ninjas.join(',')
-
-// let result = ninjas.indexOf('nandi')
-// let result = ninjas.concat(['ken','crystal'])
-
-// let result = ninjas.push('Mahadev') //IT RETURNS THE NEW LENGTH
-let result = ninjas.pop() //it takes last element of array
-
-console.log(result)
-// console.log(ninjas)
+//! Start something now and finish it later
+console.table([
+  { step: "statement 1", status: "done" },
+  { step: "statement 2 --loading db--", status: "pending" },
+  { step: "statement 3", status: "done" },
+  { step: "statement 4", status: "done" },
+  { step: "callback -cntd to st. 2", status: "done" },
+]);
