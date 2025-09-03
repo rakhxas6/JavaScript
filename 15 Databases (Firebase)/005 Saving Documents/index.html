@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Saving Documents</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="container my-5">
+        <h2>Recipes</h2>
+        <ul class="recipes">
+            <!-- recipes will go here -->
+        </ul>
+        <form>
+            <label for="recipe">Add a new recipe:</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="recipe" placeholder="Enter recipe" required>
+                <button type="submit" class="btn btn-outline-secondary">Add</button>
+            </div>
+
+        </form>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script>
+       const firebaseConfig = {
+            apiKey: "AIzaSyC-Cg6VoAYnL8S1MF2HJgL5AzmxdR9ONIw",
+            authDomain: "udemy-modern-js-4d729.firebaseapp.com",
+            projectId: "udemy-modern-js-4d729",
+            storageBucket: "udemy-modern-js-4d729.firebasestorage.app",
+            messagingSenderId: "873077223739",
+            appId: "1:873077223739:web:aeacc9523311bfb351071e",
+            measurementId: "G-FB548NB3K7"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig)
+        const db = firebase.firestore()
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

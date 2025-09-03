@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Literal Recap</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <h1>Object Literal Recap</h1>
+    <p>In JavaScript, an object literal is a comma-separated list of name-value pairs wrapped in curly braces.</p>
+    <h2>Creating Object Literals</h2>
+    <pre><code class="language-javascript">const person = {
+        name: "John",
+        age: 30,
+        greet: function() {
+            console.log("Hello, " + this.name);
+        }
+    };</code></pre>
+    <h2>Accessing Object Properties</h2>
+    <pre><code class="language-javascript">console.log(person.name); // John
+    person.greet(); // Hello, John</code></pre>
+    <script src="./script.js"></script>
+</body>
+
+</html>

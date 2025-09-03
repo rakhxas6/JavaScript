@@ -1,38 +1,36 @@
-//  array is a special type of object used to store ordered collections of values. These values can be of any type: strings, numbers, objects, other arrays, etc.
-
-// const fruits = ["apple", "banana", "cherry"];
-// const numbers = [1, 2, 3, 4, 5];
-// const mixed = [1, "hello", true, null];
-// const nested = [
-//   [1, 2],
-//   [3, 4],
-// ];
+const names = ['shaun', 'crystal']
+console.log(...names)
 
 
-let ninjas = ['Sujan', "Sajan", "nandi"];
-// ninjas[1] = "ken"     // we can override the orignial data tooo.
-
-// console.log(ninjas[1])
-
-// let ages = [20, 23, 34, 45]
-// console.log(ages[2])
+const ages = new Array(20, 25, 30)
+console.log(ages)
+console.log(...ages)
 
 
-let random = ['shaun', 'crystal', 30, 20, null, undefined]
-// console.log(random)
+const userOne = {}
+console.log(userOne)
 
-console.log(random.length)
+// object constructor
+const userTwo = new Object();
+console.log(userTwo)
+
+const name = 'shaun'
+console.log(name)
+console.log(name.length)
+console.log(name.toUpperCase())
 
 
-// Array Methods
 
-// let result = ninjas.join(',')
+const nameTwo = new String('rya')
+console.log(nameTwo)
 
-// let result = ninjas.indexOf('nandi')
-// let result = ninjas.concat(['ken','crystal'])
 
-// let result = ninjas.push('Mahadev') //IT RETURNS THE NEW LENGTH
-let result = ninjas.pop() //it takes last element of array
+const num = new Number(10)
+console.log(num)
 
-console.log(result)
-// console.log(ninjas)
+
+const bool = new Boolean(true)
+console.log(bool)
+
+
+//? not everything in JS are objects but when wrapped inside the constructor, it acts as one 
